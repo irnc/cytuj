@@ -1,0 +1,7 @@
+baseURL = "https://cytuj.ironta.by/"
+languageCode = "be-by"
+title = "Цытуй сваё!"
+theme = "ananke"
+
+[taxonomies]
+  "аўтар" = "authors"
