@@ -1,0 +1,26 @@
+{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
+{{ define "main" }}
+  {{ $page := index .Params "cytuj-pdf" "page" }}
+  {{ $citation := index .Params "cytuj-pdf" "citation" }}
+  {{ $data := index .Site.Data.pdf (print "page-" $page) (print "cite-" $page "-" $citation) }}
+
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p class="f6 helvetica">
+          <a href="{{ "/" | relLangURL }}authors/{{ (index .Params.authors 0) | urlize }}" class="link blue hover-black">
+            {{ index $data "author" }}
+          </a>
+        </p>
+        <p style="font-size: 3rem; line-height: 1.25;">
+          {{ partial "cite-content.html" . }}
+        </p>
+        <p class="f6 helvetica tr">
+          <i>{{ index $data "source" }}</i>
+        </p>
+        <hr />
+        {{ .Content }}
+      </div>
+    </article>
+  </div>
+{{ end }}

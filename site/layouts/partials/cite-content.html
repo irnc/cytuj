@@ -1,0 +1,8 @@
+{{ $page := index .Params "cytuj-pdf" "page" }}
+{{ $citation := index .Params "cytuj-pdf" "citation" }}
+{{ $data := index .Site.Data.pdf (print "page-" $page) (print "cite-" $page "-" $citation) }}
+{{/*
+  replace is needed for versed citations for which newlines has
+  significant meaning.
+*/}}
+{{ replace (index $data "content") "\n" "<br />" | safeHTML }}

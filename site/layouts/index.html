@@ -1,0 +1,70 @@
+{{ define "main" }}
+  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+    {{ .Content }}
+  </article>
+
+  {{ $section := where .Site.RegularPages "Section" "in" (slice "cites") }}
+  
+  <div class="pa3 pa4-ns w-100 w-70-ns center">
+    <section class="w-100 mw8">
+      <input 
+        type="text" 
+        id="search-input"
+        class="mb3 pa3 w-100" 
+        autofocus
+        placeholder="Пра што думаецца?" />
+
+      <div id="search-output">
+        {{ range $section }}
+          {{ partial "summary.html" . }}
+        {{ end }}
+      </div>
+      
+      <script>
+        var searchIndex = [
+          {{ range $section }}
+            {{ $page := index .Params "cytuj-pdf" "page" }}
+            {{ $citation := index .Params "cytuj-pdf" "citation" }}
+            {{ $data := index .Site.Data.pdf (print "page-" $page) (print "cite-" $page "-" $citation) }}
+            {
+              id: "{{ print "cite-" .Page.File.BaseFileName }}",
+              text: "{{ lower (print (index $data "author") " " (index $data "source") " " (index $data "content")) }}"
+            },
+          {{end}}
+        ];
+
+        // TODO extract into theme js to use babel
+        const input = document.getElementById('search-input');
+        const output = document.getElementById('search-output');
+        let transitionTimeout;
+
+        input.addEventListener('input', (event) => {
+          if (transitionTimeout) {
+            clearTimeout(transitionTimeout);
+          }
+
+          output.classList.add('changing');
+          transitionTimeout = setTimeout(() => {
+            const needle = event.target.value.toLowerCase();
+            const found = searchIndex.map(cite => cite.text.includes(needle));
+
+            searchIndex.map(cite => cite.id).forEach((id, i) => {
+              const { classList } = document.getElementById(id);
+
+              classList.add(found[i] ? 'db' : 'dn');
+              classList.remove(found[i] ? 'dn' : 'db');
+            });
+
+            // Паказваем выпадковую цытату, калі нічога не знайшлі.
+            if (found.filter(v => v).length === 0) {
+              const random = searchIndex[Math.floor(Math.random() * searchIndex.length)];
+              document.getElementById(random.id).classList.add('db');
+            }
+            
+            output.classList.remove('changing');
+          }, 300);
+        });
+      </script>
+    </section>
+  </div>
+{{ end }}
