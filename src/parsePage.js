@@ -84,6 +84,8 @@ const assembleCitations = (descriptors) => {
         // consistency (e.g. on page 22, second citation, between "і губляе").
         citation.content = citation.content.replace(/\u00A0/, ' ');
 
+        delete citation.contentItems;
+
         citations.push(citation);
         citation = reset();
       }

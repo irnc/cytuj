@@ -35,7 +35,7 @@ load(pdfPath).then((pages) => {
         `${dataDir}/cite-${page}-${citation}.json`,
         // .json files should have formatted JSON for human readability and to
         // allow easy readable diffs on changes to parsing code.
-        JSON.stringify(data, null, 2)
+        JSON.stringify(data, null, 2) + '\n'
       );
 
       // TODO for initial file write is it ok, but only frontmatter should be
