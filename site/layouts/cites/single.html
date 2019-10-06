@@ -7,15 +7,15 @@
   <div class="flex-l mt2 mw8 center">
     <article class="center cf pv5 ph3 ph4-ns mw7">
       <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
-        <p class="f6 helvetica">
+        <p class="f6 helvetica cite-author">
           <a href="{{ "/" | relLangURL }}authors/{{ (index .Params.authors 0) | urlize }}" class="link blue hover-black">
             {{ index $data "author" }}
           </a>
         </p>
-        <p style="font-size: 3rem; line-height: 1.25;">
+        <p style="font-size: 3rem; line-height: 1.25;" class="cite-content">
           {{ partial "cite-content.html" . }}
         </p>
-        <p class="f6 helvetica tr">
+        <p class="f6 helvetica tr cite-source">
           <i>{{ index $data "source" }}</i>
         </p>
         <hr />
