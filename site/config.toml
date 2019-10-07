@@ -2,6 +2,7 @@ baseURL = "https://cytuj.ironta.by/"
 languageCode = "be-by"
 title = "Цытуй сваё!"
 theme = "ananke"
+GoogleAnalytics = "UA-149585424-1"
 
 [taxonomies]
   "аўтар" = "authors"
