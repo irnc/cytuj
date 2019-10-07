@@ -5,3 +5,17 @@ theme = "ananke"
 
 [taxonomies]
   "аўтар" = "authors"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "facebook"
+    name = "суполка ў Facebook"
+    pre = "<i class='fa fa-facebook'></i>"
+    url = "https://www.facebook.com/groups/cytuj/"
+    weight = -110
+
+  [[menu.main]]
+    name = "зборнік цытатаў"
+    url = "http://www.movananova.by/medyateka/litaratura/zbornik-cytatau-cytuj-svayo.html"
+    weight = -100
