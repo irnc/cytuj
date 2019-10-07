@@ -1,7 +1,4 @@
 node_modules
 
-# Hugo builds site to site/public.
-site/public
-
 # PDF from web
 Cytujsvajo_Cytatnik.pdf

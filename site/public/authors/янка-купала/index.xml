@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Янка Купала on Цытуй сваё!</title>
+    <link>https://cytuj.ironta.by/authors/%D1%8F%D0%BD%D0%BA%D0%B0-%D0%BA%D1%83%D0%BF%D0%B0%D0%BB%D0%B0/</link>
+    <description>Recent content in Янка Купала on Цытуй сваё!</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>be-by</language>
+    
+	<atom:link href="https://cytuj.ironta.by/authors/%D1%8F%D0%BD%D0%BA%D0%B0-%D0%BA%D1%83%D0%BF%D0%B0%D0%BB%D0%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Янка Купала</title>
+      <link>https://cytuj.ironta.by/cites/31-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cytuj.ironta.by/cites/31-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Янка Купала</title>
+      <link>https://cytuj.ironta.by/cites/41-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cytuj.ironta.by/cites/41-2/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
