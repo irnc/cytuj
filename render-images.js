@@ -17,8 +17,10 @@ const renderImage = async (browser, cite) => {
     width: 1080,
     height: 1080
   });
+
+  await makeDir(`site/content/cites/${cite}`);
   await page.screenshot({
-    path: `site/public/cites/${cite}/preview.png`,
+    path: `site/content/cites/${cite}/preview.png`,
     clip: {
       x: 0,
       y: 0,
