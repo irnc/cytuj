@@ -31,6 +31,7 @@ load(pdfPath).then((pages) => {
         `- ${data.author}\n` +
         `title: "${data.author}"\n` +
         `description: "${data.source}"\n` +
+        `locale: "be_BY"\n` +
         'images:\n' +
         `- cites/${page}-${citation}/preview.png\n` +
         '---\n'
