@@ -29,6 +29,10 @@ load(pdfPath).then((pages) => {
         `  citation: ${citation}\n` +
         'authors:\n' +
         `- ${data.author}\n` +
+        `title: "${data.author}"\n` +
+        `description: "${data.source}"\n` +
+        'images:\n' +
+        `- cites/${page}-${citation}/preview.png\n` +
         '---\n'
       );
     });
