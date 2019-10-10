@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "download": "curl http://fly-uni.org/wp-content/uploads/2017/08/Cytujsvajo_Cytatnik.pdf -o Cytujsvajo_Cytatnik.pdf",
     "test": "jest"
   },
   "keywords": [],
