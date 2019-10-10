@@ -20,4 +20,5 @@
 - `(cd site/themes/ananke/src && npm i)`
 - `(cd site/themes/ananke/src && npm start)`
 - `(cd site && HUGO_ENV=production hugo)`
+- `node render-images.js`
 - `git subtree push --prefix site/public origin gh-pages`

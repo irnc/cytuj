@@ -5,14 +5,14 @@
   {{ $data := index .Site.Data.pdf (print "page-" $page) (print "cite-" $page "-" $citation) }}
 
   <div class="flex-l mt2 mw8 center">
-    <article class="center cf pv5 ph3 ph4-ns mw7">
+    <article class="center cf pv1-ns pv5-l ph3 ph4-ns mw7 cite-text">
       <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
         <p class="f6 helvetica cite-author">
           <a href="{{ "/" | relLangURL }}authors/{{ (index .Params.authors 0) | urlize }}" class="link blue hover-black">
             {{ index $data "author" }}
           </a>
         </p>
-        <p style="font-size: 3rem; line-height: 1.25;" class="cite-content">
+        <p style="font-size: 2.5rem; line-height: 1.25;" class="cite-content">
           {{ partial "cite-content.html" . }}
         </p>
         <p class="f6 helvetica tr cite-source">
