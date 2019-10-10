@@ -4,6 +4,9 @@ title = "Цытуй сваё!"
 theme = "ananke"
 GoogleAnalytics = "UA-149585424-1"
 
+[params]
+  FacebookAppId = "396012347987116"
+
 [taxonomies]
   "аўтар" = "authors"
 
