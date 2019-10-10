@@ -1,8 +1,10 @@
 const fs = require('fs');
+const moment = require('moment');
 const makeDir = require('make-dir');
 const load = require('./src/load');
 
 const pdfPath = process.argv[2] || 'Cytujsvajo_Cytatnik.pdf';
+const initialDate = moment('2019-01-01');
 
 load(pdfPath).then((pages) => {
   pages.forEach(({ page, citations }) => {
@@ -24,6 +26,7 @@ load(pdfPath).then((pages) => {
       fs.writeFileSync(
         `${__dirname}/site/content/cites/${page}-${citation}.md`,
         '---\n' +
+        `date: ${initialDate.clone().add(page, 'minutes').add(citation, 'seconds').format()}\n` +
         'cytuj-pdf:\n' +
         `  page: ${page}\n` +
         `  citation: ${citation}\n` +
