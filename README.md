@@ -1,9 +1,19 @@
+# Пачатак працы
+
+- `git clone https://github.com/irnc/cytuj.git`
+- `cd cytuj`
+- `git submodule update --init`
+- `(cd site && hugo serve)`
+
 # Як былі створаны страніцы
 
-- разбор PDF
-- запіс у `site/data` і `site/content`
+- цытатнік ў PDF быў разобраны на цытаты
+- цытаты запісаны ў `site/data` і `site/content`
 
-Каб паўтарыць разбор трэба выканаць `node index.js`.
+Каб паўтарыць разбор трэба выканаць:
+
+- `npm run download`
+- `npm install && node index.js`.
 
 # Прагляд перад публікацыяй
 
@@ -13,12 +23,12 @@
 
 # Дызайн
 
-- Галоўная старонка `site/themes/ananke/layouts/index.html`
+- Галоўная старонка `site/layouts/index.html`
 
 # Публікацыя
 
-- `(cd site/themes/ananke/src && npm i)`
+- `(cd site/themes/ananke/src && npm install)`
 - `(cd site/themes/ananke/src && npm start)`
 - `(cd site && HUGO_ENV=production hugo)`
-- `node render-images.js`
+- `npm install && node render-images.js`
 - `git subtree push --prefix site/public origin gh-pages`
