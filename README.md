@@ -14,3 +14,10 @@
 # Дызайн
 
 - Галоўная старонка `site/themes/ananke/layouts/index.html`
+
+# Публікацыя
+
+- `(cd site/themes/ananke/src && npm i)`
+- `(cd site/themes/ananke/src && npm start)`
+- `(cd site && HUGO_ENV=production hugo)`
+- `git subtree push --prefix site/public origin gh-pages`
